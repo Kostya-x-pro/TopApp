@@ -1,15 +1,16 @@
 import { JSX } from "react";
 
 // Компоненты
+import { Htag } from "@/components/Htag/Htag";
+
+// Стили
 
 // Шрифты
 
-
-// Стили
 export default function Home(): JSX.Element {
   return (
-    <div>
-     sdfsdfsdfsdf
-    </div>
+    <>
+     <Htag tag="h1">Текст</Htag>
+    </>
   );
 }
