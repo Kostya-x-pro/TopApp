@@ -1,20 +1,18 @@
 :root {
+    /* colors */
     --black: #3B434E;
+    --gry-light: #EBEBEB;
     --white: #fff;
     --primary: #7653FC;
+    --primary-hover: #593dc9;
     --red: #FC836D;
     --green: #1DC37E;
     --green-light: #C8F8E4;
+
+    /* fonts */
     --font-family: "Noto Sans", serif;
 
 }
-
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0A0A0A;
-        --foreground: #EDEDED;
-    }
-} */
 
 html,
 body {

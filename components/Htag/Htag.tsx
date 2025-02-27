@@ -5,7 +5,6 @@ import { HtagProps } from "./Htag.props";
 import styles from './Htag.module.css';
 
 export const Htag = ({ tag, children }: HtagProps): JSX.Element => {
-    // Вариант 1
     switch(tag) {
         case 'h1':
             return <h1 className={styles.h1}>{children}</h1>;
@@ -16,12 +15,4 @@ export const Htag = ({ tag, children }: HtagProps): JSX.Element => {
         default:
             return <></>;
     }
-
-    // Вариант 2
-    // return (
-    //     <>
-    //         {tag == 'h1' && <h1>{children}</h1>}
-    //         {tag == 'h2' && <h2>{children}</h2>}
-    //     </>
-    // );
 };
