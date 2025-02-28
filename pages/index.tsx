@@ -1,9 +1,8 @@
 import { JSX } from "react";
 
 // Компоненты
-import { Htag } from "@/components/Htag/Htag";
-import { Button  } from "@/components/Button/Button";
-import { Paragraph } from "@/components";
+import { Button, Htag, Paragraph, Tag } from "@/components";
+
 
 export default function Home(): JSX.Element {
   return (
@@ -14,6 +13,9 @@ export default function Home(): JSX.Element {
      <Paragraph size="s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam quaerat necessitatibus, dignissimos veritatis</Paragraph>
      <Paragraph size="m">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam quaerat necessitatibus, dignissimos veritatis</Paragraph>
      <Paragraph size="l">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam quaerat necessitatibus, dignissimos veritatis</Paragraph>
+     <Tag size="s" color="red">Мал</Tag>
+     <Tag size="m" color="green">Сред</Tag>
+     <Tag color="primary">Pirmary</Tag>
     </>
   );
 }
