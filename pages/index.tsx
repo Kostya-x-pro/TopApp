@@ -1,16 +1,17 @@
 import { JSX, useState } from "react";
 
+// HOC (компоненты)
+import { withLayout } from "@/layout/withLayout";
+
 // Компоненты
-import { Layout } from "../layout/Layout";
 import { Button, Htag, Paragraph, Tag, Rating } from "@/components";
 
-
-export default function Home(): JSX.Element {
+ function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
 
 
   return (
-    <Layout>
+    <>
       <Htag tag="h1">Заголовок</Htag>
       <Button appearance="primary">Increment</Button>
       <br/>
@@ -23,6 +24,8 @@ export default function Home(): JSX.Element {
       <Tag size="m" color="green">Сред</Tag>
       <Tag color="primary">Pirmary</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-    </Layout>
+    </>
   );
 }
+
+export default withLayout(Home);
