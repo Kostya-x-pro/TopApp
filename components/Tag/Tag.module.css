@@ -17,6 +17,12 @@
     line-height: 14px;
 }
 
+.l {
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
 .ghost {
     border: 1px solid var(--gray-light)
 } 
@@ -42,4 +48,8 @@
     color: var(--primary);
     background: none;
     border: 1px solid var(--primary);
+}
+
+.white {
+    color: var(--white);
 }
