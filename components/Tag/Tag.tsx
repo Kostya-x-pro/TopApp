@@ -33,7 +33,6 @@ export const Tag = (props: TagProps): JSX.Element => {
                 <a href={href}>{children}</a> :
                 <>{children}</>
             }
-            {children}
         </div>
     );
 };

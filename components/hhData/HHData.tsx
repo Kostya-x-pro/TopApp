@@ -1,6 +1,7 @@
 import { JSX } from "react";
 
-import { HHDatarops } from "./hhData.props";
+import { priceRU } from "@/helpers/helpres";
+import { HHDatarops } from "./HHData.props";
 import { Card } from "../Card/Card";
 import RateIcon from './rate.svg';
 
@@ -22,7 +23,7 @@ export const HHData = (props: HHDatarops): JSX.Element => {
             <Card className={styles.salary}>
                 <div>
                     <div className={styles.title}>Начальный</div>
-                    <div className={styles.salaryValue}>{juniorSalary}</div>
+                    <div className={styles.salaryValue}>{priceRU(juniorSalary)}</div>
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon/>
@@ -32,7 +33,7 @@ export const HHData = (props: HHDatarops): JSX.Element => {
 
                 <div>
                     <div className={styles.title}>Средний</div>
-                    <div className={styles.salaryValue}>{middleSalary}</div>
+                    <div className={styles.salaryValue}>{priceRU(middleSalary)}</div>
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>
@@ -42,7 +43,7 @@ export const HHData = (props: HHDatarops): JSX.Element => {
 
                 <div>
                     <div className={styles.title}>Проффесионал</div>
-                    <div className={styles.salaryValue}>{seniorSalary}</div>
+                    <div className={styles.salaryValue}>{priceRU(seniorSalary)}</div>
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>

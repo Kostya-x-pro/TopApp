@@ -1,7 +1,7 @@
 import { JSX } from "react";
 
 import { TopPageComponentProps } from "./TopPage.Component.props";
-import { HHData, Htag, Tag } from "@/components";
+import { Advantages, HHData, Htag, Paragraph, Tag } from "@/components";
 
 import cn from "classnames";
 import styles from './TopPageComponent.module.css';
@@ -32,7 +32,16 @@ export const TopPageComponent = (props: TopPageComponentProps): JSX.Element => {
                 <Htag tag="h2">Вакансии - {page.category}</Htag>
                 <Tag color="red" size="m">hh.ru</Tag>
             </div>
-            {firstCategory === TopLevelCategory.Courses && <HHData {...page.hh}/>}
+            {firstCategory === TopLevelCategory.Courses && page.hh && <HHData {...page.hh}/>}
+            {page.advantages && page.advantages.length > 0 && (
+                <>
+                    <Htag tag="h2">Преимущества</Htag>
+                    <Advantages advantages={page.advantages}/>
+                </>
+            )}
+            {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html: page.seoText}} />}
+            <Htag tag="h3">Получаемые навыки</Htag>
+            {page.tags.map(t => <Tag key={t} color="primary">{t}</Tag>)}
         </div>
     );
 };
