@@ -4,6 +4,7 @@ import { SidebarProps } from "./Sidebar.props";
 
 import cn from "classnames";
 import { Menu } from "../Menu/Menu";
+import { Search } from "@/components";
 import Logo from '../logo.svg';
 import styles from './Sidebar.module.css';
 
@@ -20,7 +21,7 @@ export const Sidebar = (props: SidebarProps): JSX.Element => {
         >
                 <Logo
                     classNames={styles.logo} />
-                <div>Seacrch</div>
+                    <Search/>
                 <Menu />
         </div>
     );

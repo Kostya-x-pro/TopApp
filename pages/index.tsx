@@ -6,7 +6,7 @@ import axios from 'axios';
 import { withLayout } from "@/layout/withLayout";
 
 // Компоненты
-import { Button, Htag, Paragraph, Tag, Rating } from "@/components";
+import { Button, Htag, Paragraph, Tag, Rating, Input, TextArea, Search } from "@/components";
 import { MenuItem } from "@/interfaces/menu.interface";
 
  function Home({ menu }: HomeProps): JSX.Element {
@@ -26,15 +26,8 @@ import { MenuItem } from "@/interfaces/menu.interface";
       <Tag size="m" color="green">Сред</Tag>
       <Tag color="primary">Pirmary</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-      {menu.map(m => (
-        <li 
-          key={m._id.secondCategory}
-          >
-            {m._id.secondCategory}
-        </li>
-      ))}
-      </ul>
+      <Input placeholder="Test" />
+      <TextArea placeholder="Test" />
     </>
   );
 }
