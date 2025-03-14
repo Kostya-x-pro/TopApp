@@ -14,12 +14,24 @@ import { Button } from '../Button/Button';
 import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import { API } from '../../helpers/api';
 
-export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
-	const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
+export const ReviewForm = (props: ReviewFormProps): JSX.Element => {
+	const { productId, isOpened, className, ...otherProps } = props;
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string>();
 
-	const onSubmit = async (formData: IReviewForm) => {
+	const { 
+		register, 
+		control, 
+		handleSubmit, 
+		formState: { 
+			errors 
+		}, 
+		reset, 
+		clearErrors 
+	} = useForm<IReviewForm>();
+
+	const onSubmit = async (formData: IReviewForm): Promise<void> => {
+		console.log(formData);
 		try {
 			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId });
 			if (data.message) {
@@ -38,7 +50,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className={cn(styles.reviewForm, className)}
-				{...props}
+				{...otherProps}
 			>
 				<Input
 					{...register('name', { required: { value: true, message: 'Заполните имя' } })}
@@ -67,7 +79,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 								rating={field.value}
 								ref={field.ref}
 								setRating={field.onChange}
-								// error={errors.rating}
+								error={errors.rating}
 								tabIndex={isOpened ? 0 : -1}
 							/>
 						)}
