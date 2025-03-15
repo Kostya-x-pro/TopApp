@@ -41,7 +41,7 @@
 }
 
 .error {
-	background: var(--red-light);
+	background: var(--red);
 }
 
 .successTitle {
