@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { withLayout } from "@/layout/withLayout";
 import { firstLevelMenu } from "@/helpers/helpres";
 import { ParsedUrlQuery } from "querystring";
+import { API } from "@/helpers/api";
 
 const Type = ({firstCategory}: TypeProps):JSX.Element => {
     return (
@@ -34,7 +35,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
         };
     }
 
-    const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + 'api/top-page/find', {
+    const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
       firstCategory: firstCategoryItem.id
     });
   

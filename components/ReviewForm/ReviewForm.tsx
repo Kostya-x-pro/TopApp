@@ -31,7 +31,6 @@ export const ReviewForm = (props: ReviewFormProps): JSX.Element => {
 	} = useForm<IReviewForm>();
 
 	const onSubmit = async (formData: IReviewForm): Promise<void> => {
-		console.log(formData);
 		try {
 			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId });
 			if (data.message) {
