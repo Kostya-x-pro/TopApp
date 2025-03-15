@@ -1,4 +1,4 @@
-import { JSX, useReducer } from "react";
+import { JSX, useEffect, useReducer } from "react";
 
 import { TopPageComponentProps } from "./TopPage.Component.props";
 import { Advantages, HHData, Htag, Paragraph, Product, Sort, Tag } from "@/components";
@@ -21,6 +21,10 @@ export const TopPageComponent = (props: TopPageComponentProps): JSX.Element => {
     const setSort = (sort: SortEnum): void => {
         dispatchSort({ type: sort });
     };
+
+    useEffect(() => {
+        dispatchSort({ type: 'reset', initialState: products});
+    }, [products]);
 
     return (
         <div className={styles.wrapper}>

@@ -105,7 +105,14 @@ export const Product = (props: ProductProps): JSX.Element => {
 				</div>
 			</Card>
 			{/* <motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial='hidden'> */}
-				<Card color='blue' className={styles.reviews} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
+				<Card 
+					color='blue' 
+					className={cn(styles.reviews, {
+						[styles.opened]: isReviewOpened,
+						[styles.closed]: !isReviewOpened,
+					})}
+					ref={reviewRef} 
+					tabIndex={isReviewOpened ? 0 : -1}>
 					{product.reviews.map(r => (
 						<div key={r._id}>
 							<Review review={r} />
@@ -115,14 +122,6 @@ export const Product = (props: ProductProps): JSX.Element => {
 					<ReviewForm productId={product._id} isOpened={isReviewOpened} />
 				</Card>
 			{/* </motion.div> */}
-
-
-			{/* <Card color="blue" className={cn(styles.reviews), {
-				[styles.opened]: isReviewOpened,
-				[styles.closed]: !isReviewOpened,
-			}}>
-				asdasdad
-			</Card> */}
 		</div>
 	);
 };
