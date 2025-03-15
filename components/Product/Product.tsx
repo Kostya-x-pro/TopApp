@@ -1,5 +1,6 @@
 import { JSX, useRef, useState, ForwardedRef, forwardRef, } from "react";
 import Image from "next/image";
+import { motion } from 'framer-motion';
 
 import { ProductProps } from "./Product.props";
 
@@ -14,9 +15,8 @@ import { declOfNum, priceRU } from "@/helpers/helpres";
 import { Divider } from "../Divider/Divider";
 import { Review } from '../Review/Review';
 import { ReviewForm } from "../ReviewForm/ReviewForm";
-// import { motion } from 'framer-motion';
 
-export const Product = (props: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef((props: ProductProps, ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
     const { 
         product,
         className,
@@ -41,7 +41,7 @@ export const Product = (props: ProductProps): JSX.Element => {
 	};
     
     return (
-		<div className={className} {...otherProps}>
+		<div className={className} ref={ref} {...otherProps}>
 			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image
@@ -124,5 +124,5 @@ export const Product = (props: ProductProps): JSX.Element => {
 			{/* </motion.div> */}
 		</div>
 	);
-};
+}));
 
