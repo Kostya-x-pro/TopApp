@@ -1,4 +1,6 @@
 import { JSX } from "react";
+//@ts-expect-error is necessary
+import {motion} from 'framer-motion';
 
 import { ButtonProps } from './Button.props'; 
 
@@ -16,9 +18,11 @@ export const Button = (props: ButtonProps): JSX.Element => {
     } = props;
 
     return (
-        <button className={cn(styles.button, className, {
-            [styles.primary] : appearance === 'primary',
-            [styles.ghost] : appearance === 'ghost',
+        <motion.button 
+            whileHover={{scale: 1.05}}
+            className={cn(styles.button, className, {
+                [styles.primary] : appearance === 'primary',
+                [styles.ghost] : appearance === 'ghost',
         })}
         {...otherProps}
         >
@@ -28,6 +32,6 @@ export const Button = (props: ButtonProps): JSX.Element => {
             })}>
                 <ArrowIcon width={14} height={14} />
                 </span>}
-        </button>
+        </motion.button>
     );
 };
