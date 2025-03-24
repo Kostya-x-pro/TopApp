@@ -1,5 +1,6 @@
 import { JSX, useRef, useState, ForwardedRef, forwardRef, } from "react";
 import Image from "next/image";
+//@ts-expect-error is necessary
 import { motion } from 'framer-motion';
 
 import { ProductProps } from "./Product.props";
