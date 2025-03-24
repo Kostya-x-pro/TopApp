@@ -1,7 +1,8 @@
 import { JSX, useEffect } from "react";
 //@ts-expect-error is necessary
 import {useAnimation, motion} from 'framer-motion';
-import UpBtnIcon from './UpBtn.svg';
+
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
 import { useScrollY } from "@/hooks/useScrollY";
 
 import styles from './UpBtn.module.css';
@@ -22,13 +23,16 @@ export const UpBtn = (): JSX.Element => {
     };
 
     return (
-        <motion.button
+        <motion.div
              className={styles.upBtn} 
-             onClick={scrollToTop}
              animate={controls}
              initial={{ opacity: 0 }}
         >
-            <UpBtnIcon/>
-        </motion.button>
+            <ButtonIcon 
+                appearance="white" 
+                icon="CloseIcon" 
+                onClick={scrollToTop}
+            />
+        </motion.div>
     );
 };
