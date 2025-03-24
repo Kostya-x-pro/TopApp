@@ -4,9 +4,9 @@ import { LayoutProps } from "./Layout.props";
 import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
+import { UpBtn } from "@/components";
 
 import styles from './Layout.module.css';
-import cn from "classnames";
 
 export const Layout = (props: LayoutProps): JSX.Element => {
     const { children } = props;
@@ -19,6 +19,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
                 { children }
             </div>
             <Footer className={styles.footer} />
+            <UpBtn />
         </div>
     );
 };
