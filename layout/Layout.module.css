@@ -13,7 +13,6 @@
 
 .header {
     grid-area: header;
-    display: none;
 }
 
 .sidebar {
@@ -34,16 +33,12 @@
         grid-template-areas: 
         "header"
         "body"
-        "footer"
-        ;
+        "footer";
+        gap: 10px;
     }
 
     .sidebar {
         display: none !important;
-    }
-
-    .header {
-        display: block;
     }
 
     .body {

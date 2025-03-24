@@ -1,12 +1,12 @@
 .product {
 	display: grid;
 	grid-template-columns:
-		[start] 70px [logoend] 30px [titlestart]
-		\ calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px
-		\ [creditstart] auto [creditend] 40px [ratestart] auto [end];
+	[start] 70px [logoend] 30px [titlestart]
+	\ calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px
+	\ [creditstart] auto [creditend] 40px [ratestart] auto [end];
 
 	margin-top: 30px;
-	padding: 30px;
+	padding: 12px;
 }
 
 .logo {
@@ -101,7 +101,7 @@
 }
 
 .reviewButton {
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 .advBlock {
@@ -292,5 +292,10 @@
 			"advBlock"
 			"hr2"
 			"actions";
+	}
+
+	.actions {
+		display: flex;
+		justify-content: space-between;
 	}
 }
