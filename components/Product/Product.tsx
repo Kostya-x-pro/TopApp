@@ -102,6 +102,7 @@ export const Product = motion(forwardRef((props: ProductProps, ref:ForwardedRef<
 						className={styles.reviewButton}
 						onClick={() => setIsReviewOpened(!isReviewOpened)}
 						aria-expanded={isReviewOpened}
+						aria-label="Кнопка читать отзывы" 
 					>Читать отзывы</Button>
 				</div>
 			</Card>

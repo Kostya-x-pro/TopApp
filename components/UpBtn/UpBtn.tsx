@@ -30,8 +30,9 @@ export const UpBtn = (): JSX.Element => {
         >
             <ButtonIcon 
                 appearance="white" 
-                icon="CloseIcon" 
+                icon="UpBtnIcon" 
                 onClick={scrollToTop}
+                aria-label="Прокрутить наверх" 
             />
         </motion.div>
     );

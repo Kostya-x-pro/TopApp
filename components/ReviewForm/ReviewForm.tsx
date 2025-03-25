@@ -94,7 +94,13 @@ export const ReviewForm = (props: ReviewFormProps): JSX.Element => {
 					aria-invalid={errors.description ? true : false}
 				/>
 				<div className={styles.submit}>
-					<Button appearance="primary" tabIndex={isOpened ? 0 : -1} onClick={() => clearErrors()}>Отправить</Button>
+					<Button 
+						appearance="primary" 
+						tabIndex={isOpened ? 0 : -1}
+						aria-label="Кнопка отправки отзыва"  
+						onClick={() => clearErrors()}>
+							Отправить
+					</Button>
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>

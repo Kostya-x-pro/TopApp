@@ -45,6 +45,7 @@ export const Search = (props: SearchProps): JSX.Element => {
                     appearance="primary"
                     className={styles.button}
                     onClick={goToSearch}
+                    aria-label="Кнопка поиск курса" 
                 >
                     <GlassIcon/>
                 </Button>

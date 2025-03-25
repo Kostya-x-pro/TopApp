@@ -2,13 +2,13 @@
     /* colors */
     --black: #3B434E;
     --gray-light: #EBEBEB;
-    --gray-dark: #787D85;
+    --gray-dark: #6c7077;
     --white: #fff;
-    --primary: #7653FC;
+    --primary: #502dd5;
     --primary-hover: #463294;
     --red: #FC836D;
-    --green: #1DC37E;
-    --green-light: #C8F8E4;
+    --green: #007947;
+    --green-light: #1DC37E;
 
     /* fonts */
     --font-family: "Noto Sans", serif;
