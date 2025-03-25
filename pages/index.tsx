@@ -6,7 +6,7 @@ import axios from 'axios';
 import { withLayout } from "@/layout/withLayout";
 
 // Компоненты
-import { Htag, Paragraph, Tag, Rating, Input, TextArea, Search } from "@/components";
+import { Htag, Paragraph, Tag, Rating, Input, TextArea } from "@/components";
 import { MenuItem } from "@/interfaces/menu.interface";
 import { API } from "@/helpers/api";
 
