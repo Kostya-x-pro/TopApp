@@ -32,7 +32,13 @@ export const TopPageComponent = (props: TopPageComponentProps): JSX.Element => {
                 <Htag tag="h1">
                     {page.title}
                 </Htag>
-                {products && <Tag color="grey" size="m">{products.length}</Tag>}
+                {products && 
+                    <Tag 
+                        color="grey" 
+                        size="m" 
+                        aria-label={products.length + 'Элементов'}>
+                            {products.length}
+                    </Tag>}
                 <Sort sort={sort} setSort={setSort}/>
             </div>
             <div>

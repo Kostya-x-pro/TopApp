@@ -32,7 +32,8 @@ export const Search = (props: SearchProps): JSX.Element => {
     };
 
     return (
-        <div
+        <form
+            role="search"
             className={cn(styles.search, className)}
             {...otherProps}>
                 <Input 
@@ -49,6 +50,6 @@ export const Search = (props: SearchProps): JSX.Element => {
                 >
                     <GlassIcon/>
                 </Button>
-        </div>
+        </form>
     );
 };

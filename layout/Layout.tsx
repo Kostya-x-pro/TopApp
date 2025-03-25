@@ -38,9 +38,13 @@ export const Layout = (props: LayoutProps): JSX.Element => {
             </a>
             <Header className={styles.header} />
             <Sidebar className={styles.sidebar} />
-            <div className={styles.body} ref={bodyRef} tabIndex={0}>
+            <main
+                role="main" 
+                className={styles.body} 
+                ref={bodyRef} 
+                tabIndex={0}>
                 { children }
-            </div>
+            </main>
             <Footer className={styles.footer} />
             <UpBtn />
         </div>

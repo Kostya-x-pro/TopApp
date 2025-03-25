@@ -5,6 +5,10 @@
     cursor: pointer;
 }
 
+.sortName {
+    display: none;
+}
+
 .sortIcon {
     display: none;
 }

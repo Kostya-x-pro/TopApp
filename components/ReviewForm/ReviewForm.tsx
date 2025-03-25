@@ -114,7 +114,7 @@ export const ReviewForm = (props: ReviewFormProps): JSX.Element => {
 					className={styles.close}
 					aria-label="Закрыть оповещение"
 				>
-					<CloseIcon />
+					<CloseIcon/>
 				</button>
 			</div>}
 			{error && <div className={cn(styles.error, styles.panel)} role="alert">
