@@ -1,31 +1,22 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { JSX, useEffect } from "react";
+import { JSX } from "react";
 import Head from "next/head";
 import ym, { YMInitializer } from "react-yandex-metrika";
+
+import Router from "next/router";
 
 import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
-import { useRouter } from "next/router";
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  const router = useRouter();
-  
 // При подключении метрики, показатили LightHouse упадут
-  useEffect(() => {
-    const handleRouteChange = (url: string): void => {
-      if (typeof window !== "undefined") {
-        ym("hit", url);
-      }
-    };
+Router.events.on('routeChangeComplete', (url: string): void => {
+  if (typeof window !== "undefined") {
+          ym("hit", url);
+        }
+});
 
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return (): void => {
-
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
+export default function App({ Component, pageProps,router }: AppProps): JSX.Element {
 
   return (
     <>
