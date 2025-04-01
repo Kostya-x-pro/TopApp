@@ -1,0 +1,8 @@
+version: "3"
+services:
+  app:
+    image: my-topapp-nextjs
+    container_name: my-topapp-nextjs
+    restart: always
+    ports:
+      - 3000:3000
